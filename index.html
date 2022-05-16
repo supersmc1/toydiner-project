@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    *{margin:0; padding:0;}
+    #root{
+      width: 100vw;
+      height: 100vh;
+      
+    }
+
+    .header{
+      width: 100vw;
+      height: 30vh;
+      border: 1px solid black;
+      display: flex;
+      justify-content: center;
+      align-items: flex-end;
+    } 
+
+    .header>div:nth-child(1){
+      width: 400px;
+      height: 245px;
+      border: 1px solid black;
+    }
+
+    .header>div:nth-child(2){
+      width: 635px;
+      height: 245px;
+      border: 1px solid black;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      font-size: 25px;
+      
+    }
+
+    
+
+    .header>div:nth-child(3){
+      width: 400px;
+      height: 245px;
+      border: 1px solid black;
+    }
+    
+    .main{
+      width: 100vw;
+      height: 70vh;
+      border: 1px solid black;
+    }
+  </style>
+</head>
+<body>
+  <div id="root">
+    <div class="header">
+      <div></div>
+      <div>
+        뭐먹을지 고민인 당신!!!
+        <h1>오늘의 저녁은???</h1>
+      </div>
+      <div></div>
+    </div>
+    <div class="main">
+      <div>
+        <div class="goodwd">
+          <div>날씨가 엄청 좋은날</div>
+        </div>
+        <div class="badwd">
+          <div>비가오는날</div>
+        </div>
+      </div>
+      <div>
+        <div class="good">
+          <div>기부니가 너무 좋아</div>
+        </div>
+        <div class="sed">
+          <div>우울해 짜증나 킹받아</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
