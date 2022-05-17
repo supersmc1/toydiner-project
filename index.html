@@ -6,17 +6,34 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
   <style>
+
+    @font-face{
+    font-family: 'BMEuljiro10yearslater';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-10-21@1.0/BMEuljiro10yearslater.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;}
+
     *{margin:0; padding:0;}
+    h1{
+      font-family: 'BMEuljiro10yearslater';
+      margin: 20px;
+      color: black;
+      
+    
+    }
     #root{
       width: 100vw;
       height: 100vh;
+      background-image: url(./image/7163ee516b191e9f1593253f03d6e04f.jpg);
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center bottom;
       
     }
 
     .header{
       width: 100vw;
       height: 30vh;
-      border: 1px solid black;
       display: flex;
       justify-content: center;
       align-items: flex-end;
@@ -25,18 +42,20 @@
     .header>div:nth-child(1){
       width: 400px;
       height: 245px;
-      border: 1px solid black;
+      background-image: url(./image/mqdefault.jpg);
+      background-size:contain;
+      background-repeat: no-repeat;
     }
 
     .header>div:nth-child(2){
       width: 635px;
       height: 245px;
-      border: 1px solid black;
       display: flex;
       justify-content: center;
       align-items: center;
       flex-direction: column;
       font-size: 25px;
+      color: white;
       
     }
 
@@ -45,14 +64,80 @@
     .header>div:nth-child(3){
       width: 400px;
       height: 245px;
-      border: 1px solid black;
+      background-image: url(./image/다운로드\ \(1\)\ 1.png);
+      background-size:contain;
+      background-repeat: no-repeat;
     }
     
     .main{
       width: 100vw;
       height: 70vh;
-      border: 1px solid black;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
     }
+
+    .main>div:nth-child(1){
+      display: flex;
+    }
+    .main>div:nth-child(2){
+      display: flex;
+    }
+    .main>div>div{
+      width: 566px;
+      height: 218px;
+      border: 1px solid black;
+      margin:20px;
+      border-radius: 40px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+
+    }
+    .main>div>div>div{
+      margin-bottom: 100px;
+      font-size: 25px;
+      color: white;
+    }
+
+    .goodwd{
+      background-image: url(./image/images\ \(1\).jpg);
+    }
+
+    .badwd{
+      background-image: url(./image/hq720.webp);
+    }
+
+    .good{
+      background-image: url(./image/a13a1301df3bea199bb1e2de589ea9a1.jpg);
+      background-position: center;
+    }
+    .sed{
+      background-image: url(./image/다운로드.jpg);
+      background-position: center;
+    }
+
+   .goodwd:hover{
+     opacity: 0.5;
+     cursor: pointer;
+   }
+   .badwd:hover{
+     opacity: 0.5;
+     cursor: pointer;
+   }.good:hover{
+     opacity: 0.5;
+     cursor: pointer;
+   }.sed:hover{
+     opacity: 0.5;
+     cursor: pointer;
+   }
+  
+
+
+
   </style>
 </head>
 <body>
@@ -84,5 +169,56 @@
       </div>
     </div>
   </div>
+
+  <script>
+    const goodwd = document.querySelector('.goodwd')
+    const main = document.querySelector('.main')
+    console.log(goodwd)
+    const newDiv = document.createElement('div')
+    const newDivPicture = document.createElement('div')
+    const egumalgo = document.createElement('div')
+
+    let goodwdimg = ["url(./image/11582506520210616f606a067-4f80-4042-9067-cee7ce90ddf4.jpg)",
+    "url(./image/1484516194665801.jpg)","url(./image/99BE434C5F32597030.png)"]
+
+
+    goodwd.addEventListener('click',function(){
+     // console.log('test')
+     main.appendChild(newDiv)
+     newDiv.style.width = "800px"
+     newDiv.style.height = "600px"
+     newDiv.style.backgroundColor = "black"
+     newDiv.style.position = "absolute"
+     newDiv.textContent = "이렇게 날씨가 너무 좋으면 역시!!!"
+     newDiv.style.color = "white"
+     newDiv.style.display = "flex"
+     newDiv.style.justifyContent = "center"
+     newDiv.style.alignItems = "center"
+     newDiv.style.flexDirection = "column"
+     newDiv.appendChild(newDivPicture)
+     newDivPicture.style.width = "400px"
+     newDivPicture.style.height = "400px"
+     newDivPicture.style.backgroundImage = 'url(./image/508414198284232.jpeg)'
+     newDiv.appendChild(egumalgo)
+     egumalgo.style.width = "200px"
+     egumalgo.style.height = "50px"
+     egumalgo.style.backgroundColor = "red"
+     egumalgo.textContent = "이거말고"
+    egumalgo.style.cursor = "pointer"
+     egumalgo.addEventListener('click',function(){
+      for(let i = 0; i < goodwdimg.length; i++)
+      newDivPicture[i].style.backgroundImage = goodwdimg[i]
+     
+     })
+
+     
+
+    });
+
+    const test = document.querySelector('#egumalgo');
+
+
+
+  </script>
 </body>
 </html>
