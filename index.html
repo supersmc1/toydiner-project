@@ -173,49 +173,80 @@
   <script>
     const goodwd = document.querySelector('.goodwd')
     const main = document.querySelector('.main')
-    console.log(goodwd)
+    //console.log(goodwd)
     const newDiv = document.createElement('div')
     const newDivPicture = document.createElement('div')
     const egumalgo = document.createElement('div')
+    const close = document.createElement('div')
 
-    let goodwdimg = ["url(./image/11582506520210616f606a067-4f80-4042-9067-cee7ce90ddf4.jpg)",
-    "url(./image/1484516194665801.jpg)","url(./image/99BE434C5F32597030.png)"]
-
+    let goodwdimg = ["url(./image/돈까스.jpg)",
+    "url(./image/함박.jpg)","url(./image/회.png)","url(./image/치킨.jpeg)","url(./image/피자.png)","url(./image/파스타.jpg)"]
+    console.log(goodwdimg)
+    let ok = true
+    let i = 0
+    let randomNumber = Math.floor(Math.random() * 5)+1;
 
     goodwd.addEventListener('click',function(){
      // console.log('test')
-     main.appendChild(newDiv)
-     newDiv.style.width = "800px"
-     newDiv.style.height = "600px"
-     newDiv.style.backgroundColor = "black"
-     newDiv.style.position = "absolute"
-     newDiv.textContent = "이렇게 날씨가 너무 좋으면 역시!!!"
-     newDiv.style.color = "white"
-     newDiv.style.display = "flex"
-     newDiv.style.justifyContent = "center"
-     newDiv.style.alignItems = "center"
-     newDiv.style.flexDirection = "column"
-     newDiv.appendChild(newDivPicture)
-     newDivPicture.style.width = "400px"
-     newDivPicture.style.height = "400px"
-     newDivPicture.style.backgroundImage = 'url(./image/508414198284232.jpeg)'
-     newDiv.appendChild(egumalgo)
-     egumalgo.style.width = "200px"
-     egumalgo.style.height = "50px"
-     egumalgo.style.backgroundColor = "red"
-     egumalgo.textContent = "이거말고"
-    egumalgo.style.cursor = "pointer"
-     egumalgo.addEventListener('click',function(){
-      for(let i = 0; i < goodwdimg.length; i++)
-      newDivPicture[i].style.backgroundImage = goodwdimg[i]
+      main.appendChild(newDiv)
+      newDiv.style.width = "800px"
+      newDiv.style.height = "600px"
+      newDiv.style.backgroundColor = "black"
+      newDiv.style.position = "absolute"
+      newDiv.textContent = "이렇게 날씨가 너무 좋으면 역시!!!"
+      newDiv.style.color = "white"
+      newDiv.style.display = "flex"
+      newDiv.style.justifyContent = "center"
+      newDiv.style.alignItems = "center"
+      newDiv.style.flexDirection = "column"
+      newDiv.appendChild(newDivPicture)
+      newDivPicture.style.width = "400px"
+      newDivPicture.style.height = "400px"
+      newDivPicture.style.backgroundImage = goodwdimg[randomNumber]
+      newDiv.appendChild(egumalgo)
+      egumalgo.style.width = "200px"
+      egumalgo.style.height = "50px"
+      egumalgo.style.backgroundColor = "red"
+      egumalgo.textContent = "이거말고"
+      egumalgo.style.cursor = "pointer"
+      newDiv.appendChild(close)
+        close.style.width = "50px"
+        close.style.height = "50px"
+        close.style.backgroundColor = "red"
+        close.style.position = "absolute"
+        close.style.left = "750px"
+        close.style.bottom = "540px"
+        close.textContent = "X"
+        close.style.fontSize = "30px"
+        close.style.cursor = "pointer"
+      
+
+      egumalgo.addEventListener('click',function(){
+          newDivPicture.style.backgroundImage = goodwdimg[i]
+          i++
+          if(i === 3){
+          newDivPicture.style.backgroundImage = "url(./image/유리엄마.gif)"
+          newDivPicture.textContent = "그냥굶어ㅡㅡ"
+          newDivPicture.style.fontSize = "30px"
+          newDivPicture.style.color = "red"
+
+          egumalgo.textContent = "창닫아라ㅡㅡ"
+          }else if(i===4){
+            newDiv.style.display = "none"
+          }
+        
+          
+        
+        
+      })
+       
+        
+    })
+
+    close.addEventListener('click',function(){
+      newDiv.style.display = "none"
+    })
      
-     })
-
-     
-
-    });
-
-    const test = document.querySelector('#egumalgo');
 
 
 
