@@ -219,24 +219,33 @@
         close.textContent = "X"
         close.style.fontSize = "30px"
         close.style.cursor = "pointer"
-      
-
-      egumalgo.addEventListener('click',function(){
-          newDivPicture.style.backgroundImage = goodwdimg[i]
-          i++
-          if(i === 3){
-          newDivPicture.style.backgroundImage = "url(./image/유리엄마.gif)"
-          newDivPicture.textContent = "그냥굶어ㅡㅡ"
-          newDivPicture.style.fontSize = "30px"
-          newDivPicture.style.color = "red"
-
-          egumalgo.textContent = "창닫아라ㅡㅡ"
-          }else if(i===4){
-            newDiv.style.display = "none"
-          }
-      })
     })
-    
+    egumalgo.addEventListener('click',function(){
+      i++
+      if( i === 1 ){
+        newDivPicture.style.backgroundImage = goodwdimg[randomNumber]
+      }
+      if( i === 2){
+        newDivPicture.style.backgroundImage = goodwdimg[randomNumber]
+      }
+  
+      
+      if(i === 3){
+        newDivPicture.style.backgroundImage = "url(./image/유리엄마.gif)"
+        newDivPicture.textContent = "그냥굶어ㅡㅡ"
+        newDivPicture.style.fontSize = "30px"
+        newDivPicture.style.color = "red"
+        egumalgo.textContent = "창닫아라ㅡㅡ"
+      }
+      if( i === 4){
+        
+        newDiv.style.display = "none"
+        newDivPicture.textContent = ""
+        i = 0
+      }
+        })
+         
+   
     close.addEventListener('click',function(){
       newDiv.style.display = "none"
     })
