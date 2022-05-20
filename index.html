@@ -40,12 +40,13 @@
     } 
 
     .header>div:nth-child(1){
-      width: 400px;
-      height: 245px;
+      width: 300px;
+      height: 300px;
+      border-radius: 50%;
       background-image: url(./image/mqdefault.jpg);
       background-size:contain;
       background-repeat: no-repeat;
-    }
+      }
 
     .header>div:nth-child(2){
       width: 635px;
@@ -62,8 +63,10 @@
     
 
     .header>div:nth-child(3){
-      width: 400px;
-      height: 245px;
+      width: 300px;
+      height: 300px;
+      border-radius: 50%;
+
       background-image: url(./image/다운로드\ \(1\)\ 1.png);
       background-size:contain;
       background-repeat: no-repeat;
@@ -85,9 +88,8 @@
       display: flex;
     }
     .main>div>div{
-      width: 566px;
+      width: 400px;
       height: 218px;
-      border: 1px solid black;
       margin:20px;
       border-radius: 40px;
       display: flex;
@@ -135,7 +137,10 @@
      cursor: pointer;
    }
   
-
+   div{
+     background-position: center;
+     background-size: cover;
+   }
 
 
   </style>
@@ -172,19 +177,120 @@
 
   <script>
     const goodwd = document.querySelector('.goodwd')
+    const badwd = document.querySelector('.badwd')
+    const good = document.querySelector('.good')
+    const sed = document.querySelector('.sed')
+
+
     const main = document.querySelector('.main')
     //console.log(goodwd)
     const newDiv = document.createElement('div')
+    const newDivtwo = document.createElement('div')
+    const newDivthree = document.createElement('div')
+    const newDivfour = document.createElement('div')
+
     const newDivPicture = document.createElement('div')
     const egumalgo = document.createElement('div')
+    const jugumalgo = document.createElement('div')
+    const yugumalgo = document.createElement('div')
+    const dugumalgo = document.createElement('div')
     const close = document.createElement('div')
+    const closetwo = document.createElement('div')
+    const closethree = document.createElement('div')
+    const closefour = document.createElement('div')
 
-    let goodwdimg = ["url(./image/돈까스.jpg)",
-    "url(./image/함박.jpg)","url(./image/회.png)","url(./image/치킨.jpeg)","url(./image/피자.png)","url(./image/파스타.jpg)"]
+
+    let goodwdimg = [
+      "url(./image/돈까스.jpg)",
+      "url(./image/함박.jpg)",
+      "url(./image/회.png)",
+      "url(./image/막창.jpg)",
+      "url(./image/피자.png)",
+      "url(./image/파스타.jpg)",
+      "url(./image/삼겹살.jpg)",
+      "url(./image/갈비.jpg)",
+      "url(./image/치즈닭갈비.jpg)",
+      "url(./image/정통집.jpg)",
+      "url(./image/조개찜.jpg)",
+      "url(./image/장어.png)",
+      "url(./image/조개구이.jpg)",
+      "url(./image/열탄.jpg)",
+      "url(./image/미도인.jpg)"
+    ]
+
+    let badwdimg = [
+    "url(./image/우동.jpg)",
+    "url(./image/콩국수.jpg)",
+    "url(./image/칼국수.jpg)",
+    "url(./image/초가집.jpg)",
+    "url(./image/두부.jpg)",
+    "url(./image/곱창쌀국수.jpg)",
+    "url(./image/파전.jpg)",
+    "url(./image/돼지고기두루치기.jpg)",
+    "url(./image/수제비.jpg)",
+    "url(./image/쌀국수.jpg)",
+    "url(./image/쌀국수.jpg)"
+    ]
+
+    let goodimg = [
+    "url(./image/찜닭.jpg)",
+    "url(./image/킹크랩.jpg)",
+    "url(./image/랍스타.jpg)",
+    "url(./image/짜파.jpg)",
+    "url(./image/지코바.jpg)",
+    "url(./image/피자탕수육.jpg)",
+    "url(./image/충만치킨.jpg)",
+    "url(./image/김치볶음밥.jpg)",
+    "url(./image/호불정식.jpg)",
+    "url(./image/미도인.jpg)",
+    "url(./image/곱창.jpg)",
+    "url(./image/아저씨.jpg)",
+    "url(./image/뿌링.jpeg)",
+    "url(./image/문어.jpg)",
+    "url(./image/계란밥.jpg)",
+    "url(./image/살치살.jpeg)",
+    "url(./image/양꼬치.jpg)",
+    "url(./image/파닭.jpg)",
+    "url(./image/닭꼬치.jpg)"
+    ]
+
+    let sedimg = [
+    "url(./image/엽떡.jpg)",
+    "url(./image/닭발.jpg)",
+    "url(./image/야채곱창.jpg)",
+    "url(./image/스팸.jpg)",
+    "url(./image/된장.jpg)",
+    "url(./image/김치찌개.jpg)",
+    "url(./image/만두국.jpg)",
+    "url(./image/불닭.jpg)",
+    "url(./image/네네치킨.jpg)",
+    "url(./image/마라.jpeg)",
+    "url(./image/엽떡.jpg)",
+    "url(./image/교촌.png)",
+    "url(./image/마라롱샤.jpg)",
+    "url(./image/배떡.png)",
+    "url(./image/오징어두루치기.jpg)",
+    "url(./image/라면.png)",
+    "url(./image/짬뽕.jpg)",
+    "url(./image/추어탕.png)",
+    "url(./image/콩나물국밥.jpg)",
+    "url(./image/훠궈.jpg)",
+    "url(./image/돼지국밥.jpg)",
+    "url(./image/순대국밥.jpg)",
+    "url(./image/떡국.jpg)"
+    ]
+
+
+
     console.log(goodwdimg)
     let ok = true
     let i = 0
-    let randomNumber = Math.floor(Math.random() * 5)+1;
+    let u = 0
+    let y = 0
+    let t = 0
+
+    
+  
 
     goodwd.addEventListener('click',function(){
      // console.log('test')
@@ -200,8 +306,9 @@
       newDiv.style.alignItems = "center"
       newDiv.style.flexDirection = "column"
       newDiv.appendChild(newDivPicture)
-      newDivPicture.style.width = "400px"
+      newDivPicture.style.width = "600px"
       newDivPicture.style.height = "400px"
+      let randomNumber = Math.floor(Math.random() * 15);
       newDivPicture.style.backgroundImage = goodwdimg[randomNumber]
       newDiv.appendChild(egumalgo)
       egumalgo.style.width = "200px"
@@ -210,40 +317,290 @@
       egumalgo.textContent = "이거말고"
       egumalgo.style.cursor = "pointer"
       newDiv.appendChild(close)
-        close.style.width = "50px"
-        close.style.height = "50px"
-        close.style.backgroundColor = "red"
-        close.style.position = "absolute"
-        close.style.left = "750px"
-        close.style.bottom = "540px"
-        close.textContent = "X"
-        close.style.fontSize = "30px"
-        close.style.cursor = "pointer"
+      close.style.width = "50px"
+      close.style.height = "50px"
+      close.style.backgroundColor = "red"
+      close.style.position = "absolute"
+      close.style.left = "750px"
+      close.style.bottom = "540px"
+      close.textContent = "X"
+      close.style.fontSize = "30px"
+      close.style.cursor = "pointer"
+    })
+    egumalgo.addEventListener('click',function(){
+      i++
+      if( i === 1 ){
+        let randomNumberTwo = Math.floor(Math.random() * 15);
+        newDivPicture.style.backgroundImage = goodwdimg[randomNumberTwo]
+      }
+
+      if( i === 2){
+        let randomNumberTree = Math.floor(Math.random() * 15);
+        newDivPicture.style.backgroundImage = goodwdimg[randomNumberTree]
+      }
+
+      if(i === 3){
+        newDivPicture.style.backgroundImage = "url(./image/유리엄마.gif)"
+        newDivPicture.textContent = "그냥굶어ㅡㅡ"
+        newDivPicture.style.fontSize = "30px"
+        newDivPicture.style.color = "red"
+        egumalgo.textContent = "창닫아라ㅡㅡ"
+      }
+
+      if( i === 4){
+        newDivPicture.textContent = ""
+        main.removeChild(newDiv);
+        newDiv.removeChild(newDivPicture);
+        newDiv.removeChild(egumalgo);
+        newDiv.removeChild(close);
       
+        i = 0
+      }
+        })
+         
+   //--------------------------------------------------------------------------------
 
-      egumalgo.addEventListener('click',function(){
-          newDivPicture.style.backgroundImage = goodwdimg[i]
-          i++
-          if(i === 3){
-          newDivPicture.style.backgroundImage = "url(./image/유리엄마.gif)"
-          newDivPicture.textContent = "그냥굶어ㅡㅡ"
-          newDivPicture.style.fontSize = "30px"
-          newDivPicture.style.color = "red"
+    badwd.addEventListener('click',function(){
+     // console.log('test')
+      main.appendChild(newDivtwo)
+      newDivtwo.style.width = "800px"
+      newDivtwo.style.height = "600px"
+      newDivtwo.style.backgroundColor = "black"
+      newDivtwo.style.position = "absolute"
+      newDivtwo.textContent = "비가 오자나~ 마치~ 기다린거처럼!!!"
+      newDivtwo.style.color = "white"
+      newDivtwo.style.display = "flex"
+      newDivtwo.style.justifyContent = "center"
+      newDivtwo.style.alignItems = "center"
+      newDivtwo.style.flexDirection = "column"
+      newDivtwo.appendChild(newDivPicture)
+      newDivPicture.style.width = "600px"
+      newDivPicture.style.height = "400px"
+      let randomNumbersed = Math.floor(Math.random() * 11);
+      newDivPicture.style.backgroundImage = badwdimg[randomNumbersed]
+      newDivtwo.appendChild(jugumalgo)
+      jugumalgo.style.width = "200px"
+      jugumalgo.style.height = "50px"
+      jugumalgo.style.backgroundColor = "red"
+      jugumalgo.textContent = "이거말고"
+      jugumalgo.style.cursor = "pointer"
+      newDivtwo.appendChild(closetwo)
+      closetwo.style.width = "50px"
+      closetwo.style.height = "50px"
+      closetwo.style.backgroundColor = "red"
+      closetwo.style.position = "absolute"
+      closetwo.style.left = "750px"
+      closetwo.style.bottom = "540px"
+      closetwo.textContent = "X"
+      closetwo.style.fontSize = "30px"
+      closetwo.style.cursor = "pointer"
+    })
+    jugumalgo.addEventListener('click',function(){
+      u++
+      if( u === 1 ){
+        let randomNumbersedtwo = Math.floor(Math.random() * 11);
+        newDivPicture.style.backgroundImage = badwdimg[randomNumbersedtwo]
+      }
 
-          egumalgo.textContent = "창닫아라ㅡㅡ"
-          }else if(i===4){
-            newDiv.style.display = "none"
-          }
+      if( u === 2){
+        let randomNumbersedtree = Math.floor(Math.random() * 11);
+        newDivPicture.style.backgroundImage = badwdimg[randomNumbersedtree]
+      }
+
+      if(u === 3){
+        newDivPicture.style.backgroundImage = "url(./image/빡빡이.gif)"
+        newDivPicture.textContent = "결정장애냐????"
+        newDivPicture.style.fontSize = "30px"
+        newDivPicture.style.color = "red"
+        jugumalgo.textContent = "창닫아라ㅡㅡ"
+      }
+
+      if( u === 4){
+        newDivPicture.textContent = ""
+        main.removeChild(newDivtwo);
+        newDivtwo.removeChild(newDivPicture);
+        newDivtwo.removeChild(jugumalgo);
+        newDivtwo.removeChild(closetwo);
+      
+        u = 0
+      }
+        })
+
+//----------------------------------------------------------------------------
+      good.addEventListener('click',function(){
+     // console.log('test')
+      main.appendChild(newDivthree)
+      newDivthree.style.width = "800px"
+      newDivthree.style.height = "600px"
+      newDivthree.style.backgroundColor = "black"
+      newDivthree.style.position = "absolute"
+      newDivthree.textContent = "기부니가 넘나 좋아 좋아 이럴땐???"
+      newDivthree.style.color = "white"
+      newDivthree.style.display = "flex"
+      newDivthree.style.justifyContent = "center"
+      newDivthree.style.alignItems = "center"
+      newDivthree.style.flexDirection = "column"
+      newDivthree.appendChild(newDivPicture)
+      newDivPicture.style.width = "600px"
+      newDivPicture.style.height = "400px"
+      let randomNumbergood = Math.floor(Math.random() * 19);
+      newDivPicture.style.backgroundImage = goodimg[randomNumbergood]
+      newDivthree.appendChild(yugumalgo)
+      yugumalgo.style.width = "200px"
+      yugumalgo.style.height = "50px"
+      yugumalgo.style.backgroundColor = "red"
+      yugumalgo.textContent = "이거말고"
+      yugumalgo.style.cursor = "pointer"
+      newDivthree.appendChild(closethree)
+      closethree.style.width = "50px"
+      closethree.style.height = "50px"
+      closethree.style.backgroundColor = "red"
+      closethree.style.position = "absolute"
+      closethree.style.left = "750px"
+      closethree.style.bottom = "540px"
+      closethree.textContent = "X"
+      closethree.style.fontSize = "30px"
+      closethree.style.cursor = "pointer"
+    })
+    yugumalgo.addEventListener('click',function(){
+      y++
+      if( y === 1 ){
+        let randomNumbergoodtwo = Math.floor(Math.random() * 19);
+        newDivPicture.style.backgroundImage = goodimg[randomNumbergoodtwo]
+      }
+
+      if( y === 2){
+        let randomNumbergoodtree = Math.floor(Math.random() * 19);
+        newDivPicture.style.backgroundImage = goodimg[randomNumbergoodtree]
+      }
+
+      if(y === 3){
+        newDivPicture.style.backgroundImage = "url(./image/박사.gif)"
+        newDivPicture.textContent = "코딩이나 더하지 그래ㅡㅡ??"
+        newDivPicture.style.fontSize = "30px"
+        newDivPicture.style.color = "red"
+        yugumalgo.textContent = "창닫아라ㅡㅡ"
+      }
+
+      if( y === 4){
+        newDivPicture.textContent = ""
+        main.removeChild(newDivthree);
+        newDivthree.removeChild(newDivPicture);
+        newDivthree.removeChild(yugumalgo);
+        newDivthree.removeChild(closethree);
+      
+        y = 0
+      }
+        })
+//--------------------------------------------------------------------------
+
+      sed.addEventListener('click',function(){
+     // console.log('test')
+      main.appendChild(newDivfour)
+      newDivfour.style.width = "800px"
+      newDivfour.style.height = "600px"
+      newDivfour.style.backgroundColor = "black"
+      newDivfour.style.position = "absolute"
+      newDivfour.textContent = "아놔 오늘 너무 킹받네ㅡㅡ 짜증나 뭐먹지?"
+      newDivfour.style.color = "white"
+      newDivfour.style.display = "flex"
+      newDivfour.style.justifyContent = "center"
+      newDivfour.style.alignItems = "center"
+      newDivfour.style.flexDirection = "column"
+      newDivfour.appendChild(newDivPicture)
+      newDivPicture.style.width = "600px"
+      newDivPicture.style.height = "400px"
+      let randomNumbersed = Math.floor(Math.random() * 23);
+      newDivPicture.style.backgroundImage = sedimg[randomNumbersed]
+      newDivfour.appendChild(dugumalgo)
+      dugumalgo.style.width = "200px"
+      dugumalgo.style.height = "50px"
+      dugumalgo.style.backgroundColor = "red"
+      dugumalgo.textContent = "이거말고"
+      dugumalgo.style.cursor = "pointer"
+      newDivfour.appendChild(closefour)
+      closefour.style.width = "50px"
+      closefour.style.height = "50px"
+      closefour.style.backgroundColor = "red"
+      closefour.style.position = "absolute"
+      closefour.style.left = "750px"
+      closefour.style.bottom = "540px"
+      closefour.textContent = "X"
+      closefour.style.fontSize = "30px"
+      closefour.style.cursor = "pointer"
+    })
+    dugumalgo.addEventListener('click',function(){
+      t++
+      if( t === 1 ){
+        let randomNumbersedtwo = Math.floor(Math.random() * 23);
+        newDivPicture.style.backgroundImage = sedimg[randomNumbersedtwo]
+      }
+
+      if( t === 2){
+        let randomNumbersedtree = Math.floor(Math.random() * 23);
+        newDivPicture.style.backgroundImage = sedimg[randomNumbersedtree]
+      }
+
+      if(t === 3){
+        newDivPicture.style.backgroundImage = "url(./image/운동.gif)"
+        newDivPicture.textContent = "운동 좀해 만충아;;"
+        newDivPicture.style.fontSize = "30px"
+        newDivPicture.style.color = "red"
+        dugumalgo.textContent = "창닫아라ㅡㅡ"
+      }
+
+      if( t === 4){
+        newDivPicture.textContent = ""
+        main.removeChild(newDivfour);
+        newDivfour.removeChild(newDivPicture);
+        newDivfour.removeChild(dugumalgo);
+        newDivfour.removeChild(closefour);
+      
+        t = 0
+      }
+        })
+
+   //----------------------------------------------------------------------------------
+   
+    close.addEventListener('click',function(){
+      main.removeChild(newDiv)
+      goodwd.addEventListener('mouseover',function(){
+        goodwd.style.backgroundImage = "url(./image/귀신.gif)"
+        goodwd.textContent = "또 클릭하면 꿈에나옴"
+        goodwd.style.fontSize = "30px"
+        goodwd.style.color = "red"
       })
     })
-    
-    close.addEventListener('click',function(){
-      newDiv.style.display = "none"
+    //------------------------------------
+    closetwo.addEventListener('click',function(){
+      main.removeChild(newDivtwo)
+      badwd.addEventListener('mouseover',function(){
+        badwd.style.backgroundImage = "url(./image/부리.gif)"
+        badwd.textContent = "또클릭? 그만좀 먹어 돼지야!!!"
+        badwd.style.fontSize = "30px"
+        badwd.style.color = "red"
+      })
     })
-     
-
-
-
+    //-----------------------------------------------------
+    closethree.addEventListener('click',function(){
+      main.removeChild(newDivthree)
+      good.addEventListener('mouseover',function(){
+        good.style.backgroundImage = "url(./image/탈모.gif)"
+        good.textContent = "또 클릭하면 탈모온다"
+        good.style.fontSize = "30px"
+        good.style.color = "red"
+      })
+    })
+    //-------------------------------------------------
+    closefour.addEventListener('click',function(){
+      main.removeChild(newDivfour)
+      sed.addEventListener('mouseover',function(){
+        sed.style.backgroundImage = "url(./image/중성마녀.gif)"
+        sed.textContent = "다시 클릭하면 얘 쫒아옴"
+        sed.style.fontSize = "30px"
+        sed.style.color = "red"
+      })
+    })
   </script>
 </body>
 </html>
