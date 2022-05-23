@@ -249,7 +249,6 @@
     const closetwo = document.createElement('div')
     const closethree = document.createElement('div')
     const closefour = document.createElement('div')
-    window.onresize = function(){ document.location.reload(); };
 
 
     let goodwdimg = [
@@ -349,10 +348,9 @@
       main.appendChild(newDiv)
       newDiv.style.width = "800px"
       newDiv.style.height = "600px"
-      newDiv.style.backgroundColor = "rgba(0, 0, 0, 0.8)"
+      newDiv.style.backgroundColor = "black"
       newDiv.style.position = "absolute"
       newDiv.textContent = "이렇게 날씨가 너무 좋으면 역시!!!"
-      newDiv.style.fontWeight ='bold'
       newDiv.style.color = "white"
       newDiv.style.display = "flex"
       newDiv.style.justifyContent = "center"
@@ -403,6 +401,9 @@
       if( i === 4){
         newDivPicture.textContent = ""
         main.removeChild(newDiv);
+        newDiv.removeChild(newDivPicture);
+        newDiv.removeChild(egumalgo);
+        newDiv.removeChild(close);
       
         i = 0
       }
@@ -415,7 +416,7 @@
       main.appendChild(newDivtwo)
       newDivtwo.style.width = "800px"
       newDivtwo.style.height = "600px"
-      newDivtwo.style.backgroundColor = "rgba(0, 0, 0, 0.8)"
+      newDivtwo.style.backgroundColor = "black"
       newDivtwo.style.position = "absolute"
       newDivtwo.textContent = "비가 오자나~ 마치~ 기다린거처럼!!!"
       newDivtwo.style.color = "white"
@@ -468,6 +469,9 @@
       if( u === 4){
         newDivPicture.textContent = ""
         main.removeChild(newDivtwo);
+        newDivtwo.removeChild(newDivPicture);
+        newDivtwo.removeChild(jugumalgo);
+        newDivtwo.removeChild(closetwo);
       
         u = 0
       }
@@ -479,7 +483,7 @@
       main.appendChild(newDivthree)
       newDivthree.style.width = "800px"
       newDivthree.style.height = "600px"
-      newDivthree.style.backgroundColor = "rgba(0, 0, 0, 0.8)"
+      newDivthree.style.backgroundColor = "black"
       newDivthree.style.position = "absolute"
       newDivthree.textContent = "기부니가 넘나 좋아 좋아 이럴땐???"
       newDivthree.style.color = "white"
@@ -532,6 +536,9 @@
       if( y === 4){
         newDivPicture.textContent = ""
         main.removeChild(newDivthree);
+        newDivthree.removeChild(newDivPicture);
+        newDivthree.removeChild(yugumalgo);
+        newDivthree.removeChild(closethree);
       
         y = 0
       }
@@ -543,7 +550,7 @@
       main.appendChild(newDivfour)
       newDivfour.style.width = "800px"
       newDivfour.style.height = "600px"
-      newDivfour.style.backgroundColor = "rgba(0, 0, 0, 0.8)"
+      newDivfour.style.backgroundColor = "black"
       newDivfour.style.position = "absolute"
       newDivfour.textContent = "아놔 오늘 너무 킹받네ㅡㅡ 짜증나 뭐먹지?"
       newDivfour.style.color = "white"
@@ -596,6 +603,9 @@
       if( t === 4){
         newDivPicture.textContent = ""
         main.removeChild(newDivfour);
+        newDivfour.removeChild(newDivPicture);
+        newDivfour.removeChild(dugumalgo);
+        newDivfour.removeChild(closefour);
       
         t = 0
       }
@@ -642,165 +652,6 @@
         sed.style.color = "red"
       })
     })
-    if (matchMedia("screen and (max-width: 600px)").matches){
-      console.log("모바일")
-      goodwd.addEventListener('click',function(){
-     // console.log('test')
-      main.appendChild(newDiv)
-      newDiv.style.width = "380px"
-      newDiv.style.height = "500px"
-      newDiv.style.backgroundColor = "rgba(0, 0, 0, 0.8)"
-      newDiv.style.position = "absolute"
-      newDiv.textContent = "이렇게 날씨가 너무 좋으면 역시!!!"
-      newDiv.style.color = "white"
-      newDiv.style.display = "flex"
-      newDiv.style.justifyContent = "center"
-      newDiv.style.alignItems = "center"
-      newDiv.style.flexDirection = "column"
-      newDiv.appendChild(newDivPicture)
-      newDivPicture.style.width = "300px"
-      newDivPicture.style.height = "300px"
-      let randomNumber = Math.floor(Math.random() * 15);
-      newDivPicture.style.backgroundImage = goodwdimg[randomNumber]
-      newDiv.appendChild(egumalgo)
-      egumalgo.style.width = "100px"
-      egumalgo.style.height = "50px"
-      egumalgo.style.backgroundColor = "red"
-      egumalgo.textContent = "이거말고"
-      egumalgo.style.cursor = "pointer"
-      newDiv.appendChild(close)
-      close.style.width = "25px"
-      close.style.height = "25px"
-      close.style.backgroundColor = "red"
-      close.style.position = "absolute"
-      close.style.left = "340px"
-      close.style.bottom = "458px"
-      close.textContent = "X"
-      close.style.fontSize = "20px"
-      close.style.cursor = "pointer"
-    })
-  }
-  
-
-    if (matchMedia("screen and (max-width: 600px)").matches){
-      console.log("모바일")
-      badwd.addEventListener('click',function(){
-     // console.log('test')
-      main.appendChild(newDivtwo)
-      newDivtwo.style.width = "380px"
-      newDivtwo.style.height = "500px"
-      newDivtwo.style.backgroundColor = "rgba(0, 0, 0, 0.8)"
-      newDivtwo.style.position = "absolute"
-      newDivtwo.textContent = "이렇게 날씨가 너무 좋으면 역시!!!"
-      newDivtwo.style.color = "white"
-      newDivtwo.style.display = "flex"
-      newDivtwo.style.justifyContent = "center"
-      newDivtwo.style.alignItems = "center"
-      newDivtwo.style.flexDirection = "column"
-      newDivtwo.appendChild(newDivPicture)
-      newDivPicture.style.width = "300px"
-      newDivPicture.style.height = "300px"
-      let randomNumberbad = Math.floor(Math.random() * 11);
-      newDivPicture.style.backgroundImage = badwdimg[randomNumberbad]
-      newDivtwo.appendChild(jugumalgo)
-      jugumalgo.style.width = "100px"
-      jugumalgo.style.height = "50px"
-      jugumalgo.style.backgroundColor = "red"
-      jugumalgo.textContent = "이거말고"
-      jugumalgo.style.cursor = "pointer"
-      newDivtwo.appendChild(closetwo)
-      closetwo.style.width = "25px"
-      closetwo.style.height = "25px"
-      closetwo.style.backgroundColor = "red"
-      closetwo.style.position = "absolute"
-      closetwo.style.left = "340px"
-      closetwo.style.bottom = "458px"
-      closetwo.textContent = "X"
-      closetwo.style.fontSize = "20px"
-      closetwo.style.cursor = "pointer"
-    })
-    }
-
-    if (matchMedia("screen and (max-width: 600px)").matches){
-      console.log("모바일")
-      good.addEventListener('click',function(){
-     // console.log('test')
-      main.appendChild(newDivthree)
-      newDivthree.style.width = "380px"
-      newDivthree.style.height = "500px"
-      newDivthree.style.backgroundColor = "rgba(0, 0, 0, 0.8)"
-      newDivthree.style.position = "absolute"
-      newDivthree.textContent = "이렇게 날씨가 너무 좋으면 역시!!!"
-      newDivthree.style.color = "white"
-      newDivthree.style.display = "flex"
-      newDivthree.style.justifyContent = "center"
-      newDivthree.style.alignItems = "center"
-      newDivthree.style.flexDirection = "column"
-      newDivthree.appendChild(newDivPicture)
-      newDivPicture.style.width = "300px"
-      newDivPicture.style.height = "300px"
-      let randomNumbergood = Math.floor(Math.random() * 19);
-      newDivPicture.style.backgroundImage = goodimg[randomNumbergood]
-      newDivthree.appendChild(yugumalgo)
-      yugumalgo.style.width = "100px"
-      yugumalgo.style.height = "50px"
-      yugumalgo.style.backgroundColor = "red"
-      yugumalgo.textContent = "이거말고"
-      yugumalgo.style.cursor = "pointer"
-      newDivthree.appendChild(closethree)
-      closethree.style.width = "25px"
-      closethree.style.height = "25px"
-      closethree.style.backgroundColor = "red"
-      closethree.style.position = "absolute"
-      closethree.style.left = "340px"
-      closethree.style.bottom = "458px"
-      closethree.textContent = "X"
-      closethree.style.fontSize = "20px"
-      closethree.style.cursor = "pointer"
-    })
-    }
-   
-    if (matchMedia("screen and (max-width: 600px)").matches){
-      console.log("모바일")
-      sed.addEventListener('click',function(){
-     // console.log('test')
-      main.appendChild(newDivfour)
-      newDivfour.style.width = "380px"
-      newDivfour.style.height = "500px"
-      newDivfour.style.backgroundColor = "rgba(0, 0, 0, 0.8)"
-      newDivfour.style.position = "absolute"
-      newDivfour.textContent = "이렇게 날씨가 너무 좋으면 역시!!!"
-      newDivfour.style.color = "white"
-      newDivfour.style.display = "flex"
-      newDivfour.style.justifyContent = "center"
-      newDivfour.style.alignItems = "center"
-      newDivfour.style.flexDirection = "column"
-      newDivfour.appendChild(newDivPicture)
-      newDivPicture.style.width = "300px"
-      newDivPicture.style.height = "300px"
-      let randomNumbersed = Math.floor(Math.random() * 23);
-      newDivPicture.style.backgroundImage = sedimg[randomNumbersed]
-      newDivfour.appendChild(dugumalgo)
-      dugumalgo.style.width = "100px"
-      dugumalgo.style.height = "50px"
-      dugumalgo.style.backgroundColor = "red"
-      dugumalgo.textContent = "이거말고"
-      dugumalgo.style.cursor = "pointer"
-      newDivfour.appendChild(closefour)
-      closefour.style.width = "25px"
-      closefour.style.height = "25px"
-      closefour.style.backgroundColor = "red"
-      closefour.style.position = "absolute"
-      closefour.style.left = "340px"
-      closefour.style.bottom = "458px"
-      closefour.textContent = "X"
-      closefour.style.fontSize = "20px"
-      closefour.style.cursor = "pointer"
-    })
-    }
-
-  
-    
   </script>
 </body>
 </html>
